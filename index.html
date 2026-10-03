@@ -1,0 +1,3787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lucky Traders | Makrana Marble & Granite</title>
+
+<meta name="description"
+content="Lucky Traders — Original Makrana Marble, Sangemarmar, Granite and premium natural stone for elegant residential and commercial spaces.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#0b0a08;
+    --dark:#11100d;
+    --dark2:#171511;
+    --card:#1d1a15;
+    --gold:#c8a46a;
+    --gold2:#e0c18a;
+    --cream:#f4eee4;
+    --muted:#a69d90;
+    --line:rgba(255,255,255,.10);
+    --white:#fff;
+    --max:1240px;
+    --radius:24px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+body.menu-open{
+    overflow:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+.container{
+    width:min(92%,var(--max));
+    margin:auto;
+}
+
+/* =========================
+   PRELOADER
+========================= */
+
+.preloader{
+    position:fixed;
+    inset:0;
+    background:#080705;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.8s ease;
+}
+
+.preloader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader{
+    text-align:center;
+}
+
+.loader-logo{
+    width:80px;
+    height:80px;
+    border:1px solid rgba(200,164,106,.6);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    color:var(--gold2);
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+    animation:loaderPulse 1.5s infinite;
+}
+
+.loader-text{
+    margin-top:17px;
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#bdb3a5;
+}
+
+@keyframes loaderPulse{
+    50%{
+        transform:scale(1.08);
+        box-shadow:0 0 40px rgba(200,164,106,.14);
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:5000;
+    padding:22px 0;
+    transition:.35s ease;
+}
+
+.navbar.scrolled{
+    background:rgba(8,7,5,.82);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+    padding:13px 0;
+}
+
+.nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.logo-symbol{
+    width:47px;
+    height:47px;
+    border:1px solid rgba(224,193,138,.65);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold2);
+    font-family:"Playfair Display",serif;
+    font-size:18px;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:16px;
+    letter-spacing:.7px;
+}
+
+.logo-text small{
+    display:block;
+    color:var(--gold2);
+    font-size:8px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:29px;
+}
+
+.nav-links a{
+    font-size:12px;
+    color:#d8d0c5;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:1px;
+    background:var(--gold);
+    transition:.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-enquire{
+    padding:11px 19px;
+    border:1px solid rgba(200,164,106,.65);
+    border-radius:40px;
+    color:var(--gold2)!important;
+}
+
+.nav-enquire::after{
+    display:none;
+}
+
+.menu-button{
+    display:none;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(0,0,0,.3);
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu-lines{
+    width:19px;
+    height:1px;
+    background:white;
+    position:relative;
+}
+
+.menu-lines::before,
+.menu-lines::after{
+    content:"";
+    position:absolute;
+    width:19px;
+    height:1px;
+    background:white;
+    left:0;
+}
+
+.menu-lines::before{
+    top:-6px;
+}
+
+.menu-lines::after{
+    top:6px;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+    position:fixed;
+    inset:0;
+    z-index:4500;
+    background:rgba(8,7,5,.98);
+    backdrop-filter:blur(25px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.4s ease;
+}
+
+.mobile-menu.open{
+    opacity:1;
+    visibility:visible;
+}
+
+.mobile-links{
+    text-align:center;
+}
+
+.mobile-links a{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    margin:13px 0;
+    color:#eee6da;
+    transition:.3s ease;
+}
+
+.mobile-links a:hover{
+    color:var(--gold2);
+}
+
+.mobile-close{
+    position:absolute;
+    top:22px;
+    right:5%;
+    width:45px;
+    height:45px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:white;
+    border-radius:50%;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100svh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    isolation:isolate;
+}
+
+.hero-slides{
+    position:absolute;
+    inset:0;
+    z-index:-3;
+}
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+    background-position:center;
+    background-size:cover;
+    opacity:0;
+    transform:scale(1.08);
+    transition:opacity 1.4s ease,transform 7s ease;
+}
+
+.hero-slide.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(7,6,4,.94) 0%,
+        rgba(7,6,4,.75) 42%,
+        rgba(7,6,4,.25) 100%
+    );
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:180px;
+    z-index:-1;
+    background:linear-gradient(transparent,var(--black));
+}
+
+.hero-content{
+    max-width:850px;
+    padding-top:85px;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:var(--gold2);
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:35px;
+    height:1px;
+    background:var(--gold);
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(54px,8vw,102px);
+    font-weight:500;
+    line-height:.97;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:var(--gold2);
+    font-style:italic;
+}
+
+.hero-text{
+    max-width:600px;
+    margin-top:25px;
+    color:#d0c7bb;
+    font-size:15px;
+    line-height:1.85;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:33px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:14px 23px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,.18);
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.btn-gold{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#17120b;
+}
+
+.btn-gold:hover{
+    background:var(--gold2);
+}
+
+.btn-outline{
+    color:white;
+    background:rgba(255,255,255,.04);
+}
+
+.btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold2);
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:31px;
+    left:0;
+    width:100%;
+}
+
+.hero-bottom-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.hero-note{
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:#b5ac9f;
+    text-transform:uppercase;
+}
+
+.slide-number{
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--gold2);
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+section{
+    padding:115px 0;
+    position:relative;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:780px;
+    margin:0 auto 60px;
+}
+
+.section-heading .eyebrow{
+    justify-content:center;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,5vw,65px);
+    line-height:1.03;
+    font-weight:500;
+    margin-bottom:18px;
+}
+
+.section-heading h2 span{
+    color:var(--gold2);
+    font-style:italic;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.85;
+}
+
+/* =========================
+   STONE STRIP
+========================= */
+
+.stone-strip{
+    background:#16130f;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:27px 0;
+}
+
+.stone-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stone-feature{
+    text-align:center;
+    padding:10px 20px;
+    border-right:1px solid var(--line);
+}
+
+.stone-feature:last-child{
+    border-right:0;
+}
+
+.stone-icon{
+    color:var(--gold2);
+    font-size:23px;
+    margin-bottom:9px;
+}
+
+.stone-feature strong{
+    display:block;
+    font-size:13px;
+}
+
+.stone-feature span{
+    display:block;
+    margin-top:4px;
+    color:#81796e;
+    font-size:10px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:27px;
+    box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+
+.about-image img{
+    aspect-ratio:4/5;
+    object-fit:cover;
+    transition:.7s ease;
+}
+
+.about-image:hover img{
+    transform:scale(1.04);
+}
+
+.about-badge{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    padding:18px;
+    border-radius:17px;
+    background:rgba(10,9,7,.82);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.about-badge strong{
+    display:block;
+    color:var(--gold2);
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+}
+
+.about-badge span{
+    color:#bdb4a7;
+    font-size:10px;
+}
+
+.about-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:40px;
+    line-height:1.2;
+    font-weight:500;
+    margin-bottom:21px;
+}
+
+.about-content h3 span{
+    color:var(--gold2);
+}
+
+.about-content p{
+    color:var(--muted);
+    line-height:1.9;
+    font-size:14px;
+    margin-bottom:16px;
+}
+
+.about-points{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:28px;
+}
+
+.about-point{
+    padding:18px;
+    background:rgba(255,255,255,.025);
+    border:1px solid var(--line);
+    border-radius:15px;
+}
+
+.about-point strong{
+    color:var(--gold2);
+    display:block;
+    margin-bottom:5px;
+    font-size:13px;
+}
+
+.about-point span{
+    color:#8e867c;
+    font-size:11px;
+}
+
+/* =========================
+   COLLECTIONS
+========================= */
+
+.collections{
+    background:#0e0d0a;
+}
+
+.collection-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.collection-card{
+    height:440px;
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    isolation:isolate;
+}
+
+.collection-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,.92) 100%
+    );
+}
+
+.collection-card img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s ease;
+}
+
+.collection-card:hover img{
+    transform:scale(1.08);
+}
+
+.collection-info{
+    position:absolute;
+    z-index:2;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:27px 22px;
+}
+
+.collection-number{
+    color:var(--gold2);
+    font-size:9px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.collection-info h3{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    font-weight:500;
+    margin-bottom:7px;
+}
+
+.collection-info p{
+    color:#c2b9ad;
+    font-size:11px;
+    line-height:1.6;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.product-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:21px;
+    overflow:hidden;
+    transition:.35s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(200,164,106,.45);
+}
+
+.product-image{
+    aspect-ratio:1.15/1;
+    overflow:hidden;
+}
+
+.product-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.6s ease;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.06);
+}
+
+.product-info{
+    padding:22px;
+}
+
+.product-tag{
+    color:var(--gold2);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:9px;
+}
+
+.product-info h3{
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+    font-weight:500;
+    margin:7px 0;
+}
+
+.product-info p{
+    color:#91897e;
+    line-height:1.7;
+    font-size:12px;
+}
+
+.product-link{
+    display:inline-flex;
+    color:var(--gold2);
+    font-size:11px;
+    margin-top:17px;
+    gap:8px;
+}
+
+/* =========================
+   VSL
+========================= */
+
+.vsl-section{
+    background:#0d0c09;
+}
+
+.vsl{
+    min-height:550px;
+    border-radius:29px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.35)
+    ),
+    url("https://images.unsplash.com/photo-1765766601432-edcdc9ae017d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=2200")
+    center/cover;
+}
+
+.vsl-content{
+    text-align:center;
+    max-width:690px;
+    padding:30px;
+}
+
+.play{
+    width:82px;
+    height:82px;
+    border-radius:50%;
+    margin:0 auto 24px;
+    border:1px solid rgba(255,255,255,.5);
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(12px);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.play:hover{
+    background:var(--gold);
+    color:#111;
+    transform:scale(1.08);
+}
+
+.play-triangle{
+    width:0;
+    height:0;
+    border-top:9px solid transparent;
+    border-bottom:9px solid transparent;
+    border-left:13px solid currentColor;
+    margin-left:4px;
+}
+
+.vsl-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,5vw,62px);
+    font-weight:500;
+}
+
+.vsl-content p{
+    color:#c6bdb1;
+    line-height:1.8;
+    font-size:14px;
+    margin:17px auto 25px;
+    max-width:560px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr .8fr;
+    grid-auto-rows:260px;
+    gap:13px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:19px;
+}
+
+.gallery-item:first-child{
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(4){
+    grid-column:span 2;
+}
+
+.gallery-item img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    transition:.65s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+}
+
+.gallery-label{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    background:rgba(10,9,7,.78);
+    backdrop-filter:blur(10px);
+    padding:8px 13px;
+    border-radius:30px;
+    font-size:10px;
+    color:#e1d8cb;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    background:#171410;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:29px;
+}
+
+.stars{
+    color:var(--gold2);
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.review p{
+    color:#b9b0a4;
+    line-height:1.85;
+    font-size:13px;
+    font-style:italic;
+}
+
+.review-bottom{
+    margin-top:23px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+}
+
+.review-bottom strong{
+    font-size:12px;
+}
+
+.review-bottom span{
+    color:#706960;
+    font-size:9px;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid var(--line);
+}
+
+.faq-question{
+    width:100%;
+    padding:22px 0;
+    border:0;
+    background:none;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.faq-plus{
+    color:var(--gold2);
+    font-size:22px;
+    transition:.3s ease;
+}
+
+.faq-item.active .faq-plus{
+    transform:rotate(45deg);
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.4s ease;
+}
+
+.faq-answer p{
+    padding:0 0 21px;
+    color:#898177;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location{
+    background:#11100d;
+}
+
+.location-grid{
+    display:grid;
+    grid-template-columns:.78fr 1.22fr;
+    gap:20px;
+}
+
+.location-card{
+    background:#181511;
+    border:1px solid var(--line);
+    border-radius:23px;
+    padding:39px;
+}
+
+.location-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:37px;
+    font-weight:500;
+    margin-bottom:17px;
+}
+
+.location-card p{
+    color:#999085;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.contact-list{
+    margin-top:28px;
+    display:grid;
+    gap:18px;
+}
+
+.contact-row{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+}
+
+.contact-icon{
+    color:var(--gold2);
+    font-size:18px;
+}
+
+.contact-row strong{
+    display:block;
+    font-size:11px;
+    margin-bottom:4px;
+}
+
+.contact-row a,
+.contact-row span{
+    color:#888075;
+    font-size:11px;
+}
+
+.map{
+    min-height:450px;
+    border-radius:23px;
+    overflow:hidden;
+    border:1px solid var(--line);
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:450px;
+    border:0;
+    filter:grayscale(.8) contrast(1.05);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+    background:#171410;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.contact-copy h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(45px,6vw,76px);
+    font-weight:500;
+    line-height:.98;
+}
+
+.contact-copy h2 span{
+    color:var(--gold2);
+    font-style:italic;
+}
+
+.contact-copy p{
+    color:#92897d;
+    font-size:14px;
+    line-height:1.85;
+    max-width:500px;
+    margin-top:20px;
+}
+
+.contact-form{
+    display:grid;
+    gap:13px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
+}
+
+.input{
+    width:100%;
+    padding:15px 17px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.035);
+    color:white;
+    border-radius:13px;
+    outline:none;
+}
+
+.input::placeholder{
+    color:#746d64;
+}
+
+.input:focus{
+    border-color:rgba(200,164,106,.65);
+}
+
+textarea.input{
+    min-height:135px;
+    resize:vertical;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#090806;
+    border-top:1px solid var(--line);
+    padding:62px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr .7fr .7fr .8fr;
+    gap:40px;
+    padding-bottom:45px;
+}
+
+.footer-brand p{
+    color:#6f685f;
+    font-size:11px;
+    line-height:1.8;
+    max-width:370px;
+    margin-top:16px;
+}
+
+.socials{
+    display:flex;
+    gap:9px;
+    margin-top:19px;
+}
+
+.social{
+    width:39px;
+    height:39px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#b7aea1;
+    font-size:17px;
+    transition:.3s ease;
+}
+
+.social:hover{
+    border-color:var(--gold);
+    color:var(--gold2);
+    transform:translateY(-3px);
+}
+
+.footer-col h4{
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#d6cdc1;
+    margin-bottom:18px;
+}
+
+.footer-col a{
+    display:block;
+    color:#746d64;
+    font-size:11px;
+    margin-bottom:11px;
+    transition:.25s ease;
+}
+
+.footer-col a:hover{
+    color:var(--gold2);
+}
+
+.footer-bottom{
+    border-top:1px solid var(--line);
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    color:#59534d;
+    font-size:9px;
+}
+
+.footer-bottom strong{
+    color:var(--gold2);
+    font-weight:500;
+}
+
+/* =========================
+   FLOATING BUTTONS
+========================= */
+
+.floating{
+    position:fixed;
+    right:21px;
+    bottom:21px;
+    z-index:4000;
+    display:grid;
+    gap:9px;
+}
+
+.float{
+    width:53px;
+    height:53px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:21px;
+    box-shadow:0 12px 35px rgba(0,0,0,.4);
+    transition:.3s ease;
+}
+
+.float:hover{
+    transform:translateY(-4px) scale(1.04);
+}
+
+.float-call{
+    background:#ad8248;
+}
+
+.float-wa{
+    background:#168b4d;
+}
+
+/* =========================
+   VIDEO MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:rgba(0,0,0,.92);
+    backdrop-filter:blur(15px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+}
+
+.modal.open{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-box{
+    width:min(950px,100%);
+    background:#111;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:12px;
+    position:relative;
+}
+
+.modal-content{
+    aspect-ratio:16/9;
+    width:100%;
+    border-radius:13px;
+    overflow:hidden;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.1)),
+    url("https://images.unsplash.com/photo-1548705063-56ee6314cf45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800")
+    center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-content a{
+    padding:15px 24px;
+    background:var(--gold);
+    color:#15100a;
+    border-radius:40px;
+    font-weight:700;
+    font-size:12px;
+}
+
+.modal-close{
+    position:absolute;
+    right:0;
+    top:-52px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.2);
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-size:21px;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.delay1{
+    transition-delay:.1s;
+}
+
+.delay2{
+    transition-delay:.2s;
+}
+
+.delay3{
+    transition-delay:.3s;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-button{
+        display:flex;
+    }
+
+    .collection-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    section{
+        padding:80px 0;
+    }
+
+    .hero{
+        min-height:820px;
+    }
+
+    .hero-content{
+        padding-top:90px;
+    }
+
+    .hero h1{
+        letter-spacing:-1.5px;
+    }
+
+    .hero-text{
+        font-size:13px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .stone-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stone-feature{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+        padding:17px 10px;
+    }
+
+    .stone-feature:nth-last-child(-n+2){
+        border-bottom:0;
+    }
+
+    .collection-grid,
+    .product-grid,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .collection-card{
+        height:390px;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:210px;
+    }
+
+    .gallery-item:first-child{
+        grid-row:span 2;
+    }
+
+    .gallery-item:nth-child(4){
+        grid-column:span 2;
+    }
+
+    .vsl{
+        min-height:480px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .location-card{
+        padding:28px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:32px 20px;
+    }
+
+    .footer-brand{
+        grid-column:span 2;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .logo-text strong{
+        font-size:13px;
+    }
+
+    .logo-text small{
+        font-size:7px;
+    }
+
+    .logo-symbol{
+        width:40px;
+        height:40px;
+    }
+
+    .hero h1{
+        font-size:51px;
+    }
+
+    .hero-bottom{
+        bottom:19px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+        grid-auto-rows:240px;
+    }
+
+    .gallery-item:first-child,
+    .gallery-item:nth-child(4){
+        grid-row:auto;
+        grid-column:auto;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-brand{
+        grid-column:auto;
+    }
+
+    .floating{
+        right:14px;
+        bottom:14px;
+    }
+
+    .float{
+        width:49px;
+        height:49px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     PRELOADER
+========================= -->
+
+<div class="preloader" id="preloader">
+
+    <div class="loader">
+
+        <div class="loader-logo">
+            LT
+        </div>
+
+        <div class="loader-text">
+            Lucky Traders
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar" id="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-symbol">
+                LT
+            </div>
+
+            <div class="logo-text">
+
+                <strong>Lucky Traders</strong>
+
+                <small>
+                    Marble • Granite • Sangemarmar
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#about">About</a>
+            <a href="#collections">Collections</a>
+            <a href="#products">Products</a>
+            <a href="#projects">Projects</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+
+            <a href="#contact" class="nav-enquire">
+                Enquire
+            </a>
+
+        </nav>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu">
+
+            <span class="menu-lines"></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MOBILE MENU
+========================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <button class="mobile-close" id="mobileClose">
+        ×
+    </button>
+
+    <div class="mobile-links">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#collections">Collections</a>
+        <a href="#products">Products</a>
+        <a href="#projects">Projects</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</div>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-slides">
+
+        <div
+            class="hero-slide active"
+            style="
+            background-image:url(
+            'https://images.unsplash.com/photo-1765766601432-edcdc9ae017d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=2400'
+            );">
+        </div>
+
+
+        <div
+            class="hero-slide"
+            style="
+            background-image:url(
+            'https://images.unsplash.com/photo-1767554261805-95185e9ecf87?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=2400'
+            );">
+        </div>
+
+
+        <div
+            class="hero-slide"
+            style="
+            background-image:url(
+            'https://images.unsplash.com/photo-1672322331200-c4ac12a93c15?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=2400'
+            );">
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="hero-content reveal visible">
+
+            <div class="eyebrow">
+                Natural Stone Specialists
+            </div>
+
+            <h1>
+                The beauty of<br>
+                <span>natural stone.</span>
+            </h1>
+
+            <p class="hero-text">
+                Original Makrana Marble, Sangemarmar, Granite and
+                carefully selected natural stone for homes, interiors,
+                architectural spaces and premium projects.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#collections"
+                    class="btn btn-gold magnetic">
+
+                    Explore Stone
+
+                    <span>↗</span>
+
+                </a>
+
+
+                <a
+                    href="tel:+918511430935"
+                    class="btn btn-outline magnetic">
+
+                    Call Lucky Traders
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div class="container hero-bottom-inner">
+
+            <div class="hero-note">
+                Makrana Marble • Granite • Sangemarmar
+            </div>
+
+            <div class="slide-number" id="slideNumber">
+                01 / 03
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURE STRIP
+========================= -->
+
+<div class="stone-strip">
+
+    <div class="container stone-grid">
+
+        <div class="stone-feature reveal">
+
+            <div class="stone-icon">
+                ◇
+            </div>
+
+            <strong>Makrana Marble</strong>
+
+            <span>
+                Original Sangemarmar
+            </span>
+
+        </div>
+
+
+        <div class="stone-feature reveal delay1">
+
+            <div class="stone-icon">
+                ◆
+            </div>
+
+            <strong>Granite</strong>
+
+            <span>
+                Durable natural stone
+            </span>
+
+        </div>
+
+
+        <div class="stone-feature reveal delay2">
+
+            <div class="stone-icon">
+                ✦
+            </div>
+
+            <strong>Premium Marble</strong>
+
+            <span>
+                Elegant stone surfaces
+            </span>
+
+        </div>
+
+
+        <div class="stone-feature reveal delay3">
+
+            <div class="stone-icon">
+                ✓
+            </div>
+
+            <strong>Personal Assistance</strong>
+
+            <span>
+                Selection support
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                About Lucky Traders
+            </div>
+
+            <h2>
+                Stone with a story.<br>
+                <span>Spaces with character.</span>
+            </h2>
+
+            <p>
+                Natural stone brings together individuality, durability
+                and timeless beauty. Lucky Traders focuses on marble,
+                Sangemarmar and granite for design-led spaces.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-image reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1767554261805-95185e9ecf87?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="Premium marble interior"
+                    loading="lazy">
+
+                <div class="about-badge">
+
+                    <strong>
+                        Natural. Original. Timeless.
+                    </strong>
+
+                    <span>
+                        Marble & granite for distinctive spaces.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-content reveal delay1">
+
+                <div class="eyebrow">
+                    Our Stone Philosophy
+                </div>
+
+                <h3>
+                    Every slab has its own
+                    <span>identity.</span>
+                </h3>
+
+                <p>
+                    Lucky Traders provides natural stone solutions centred
+                    around original Makrana Marble, Sangemarmar, granite
+                    and other marble varieties.
+                </p>
+
+                <p>
+                    Whether the requirement is a luxurious floor,
+                    elegant staircase, kitchen surface, bathroom,
+                    wall application or a larger architectural project,
+                    the right stone can define the entire space.
+                </p>
+
+
+                <div class="about-points">
+
+                    <div class="about-point">
+
+                        <strong>
+                            Makrana Marble
+                        </strong>
+
+                        <span>
+                            Classic white Sangemarmar with timeless appeal.
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <strong>
+                            Granite
+                        </strong>
+
+                        <span>
+                            Strong, durable surfaces for demanding spaces.
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <strong>
+                            Marble
+                        </strong>
+
+                        <span>
+                            Multiple natural patterns and tones.
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-point">
+
+                        <strong>
+                            Custom Requirements
+                        </strong>
+
+                        <span>
+                            Discuss your project's stone requirements.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COLLECTIONS
+========================= -->
+
+<section class="collections" id="collections">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Stone Collections
+            </div>
+
+            <h2>
+                Explore the world of
+                <span>stone.</span>
+            </h2>
+
+            <p>
+                From pure Makrana marble to dramatic granite and
+                expressive marble surfaces.
+            </p>
+
+        </div>
+
+
+        <div class="collection-grid">
+
+
+            <article class="collection-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548705063-56ee6314cf45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="White marble"
+                    loading="lazy">
+
+                <div class="collection-info">
+
+                    <div class="collection-number">
+                        01 — COLLECTION
+                    </div>
+
+                    <h3>
+                        Makrana Marble
+                    </h3>
+
+                    <p>
+                        Pure, elegant and timeless Sangemarmar
+                        for refined spaces.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="collection-card reveal delay1">
+
+                <img
+                    src="https://images.unsplash.com/photo-1672322331200-c4ac12a93c15?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="Granite kitchen surface"
+                    loading="lazy">
+
+                <div class="collection-info">
+
+                    <div class="collection-number">
+                        02 — COLLECTION
+                    </div>
+
+                    <h3>
+                        Granite
+                    </h3>
+
+                    <p>
+                        Strong natural surfaces with striking
+                        colours and patterns.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="collection-card reveal delay2">
+
+                <img
+                    src="https://images.unsplash.com/photo-1765766601432-edcdc9ae017d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="Marble surface"
+                    loading="lazy">
+
+                <div class="collection-info">
+
+                    <div class="collection-number">
+                        03 — COLLECTION
+                    </div>
+
+                    <h3>
+                        Premium Marble
+                    </h3>
+
+                    <p>
+                        Distinctive veins and natural movement
+                        for luxury interiors.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="collection-card reveal delay3">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548705063-56ee6314cf45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="Sangemarmar stone"
+                    loading="lazy">
+
+                <div class="collection-info">
+
+                    <div class="collection-number">
+                        04 — COLLECTION
+                    </div>
+
+                    <h3>
+                        Sangemarmar
+                    </h3>
+
+                    <p>
+                        A classic natural-stone look inspired by
+                        India's marble heritage.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                What We Offer
+            </div>
+
+            <h2>
+                Natural stone for
+                <span>every space.</span>
+            </h2>
+
+            <p>
+                Select the application and discuss the right material
+                for your project.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <article class="product-card reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548705063-56ee6314cf45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1500"
+                        alt="Makrana marble"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-tag">
+                        01 / Marble
+                    </div>
+
+                    <h3>
+                        Makrana Marble
+                    </h3>
+
+                    <p>
+                        Classic white marble and Sangemarmar
+                        for premium floors, walls and architectural details.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="product-link">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card reveal delay1">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1672322331200-c4ac12a93c15?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1500"
+                        alt="Granite countertop"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-tag">
+                        02 / Granite
+                    </div>
+
+                    <h3>
+                        Granite
+                    </h3>
+
+                    <p>
+                        Durable natural stone suitable for kitchens,
+                        counters, stairs and high-use applications.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="product-link">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card reveal delay2">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1765766601432-edcdc9ae017d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1500"
+                        alt="Premium marble interior"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-tag">
+                        03 / Marble
+                    </div>
+
+                    <h3>
+                        Designer Marble
+                    </h3>
+
+                    <p>
+                        Natural patterns and dramatic surfaces
+                        for statement interiors.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="product-link">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1767554261805-95185e9ecf87?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1500"
+                        alt="Marble floor interior"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-tag">
+                        04 / Flooring
+                    </div>
+
+                    <h3>
+                        Marble Flooring
+                    </h3>
+
+                    <p>
+                        Elegant stone floors that create a strong
+                        visual foundation for interiors.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="product-link">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card reveal delay1">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548705063-56ee6314cf45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1500"
+                        alt="Marble wall"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-tag">
+                        05 / Walls
+                    </div>
+
+                    <h3>
+                        Marble Walls
+                    </h3>
+
+                    <p>
+                        Create sophisticated feature walls and
+                        architectural surfaces.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="product-link">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card reveal delay2">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1672322331200-c4ac12a93c15?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1500"
+                        alt="Granite kitchen"
+                        loading="lazy">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-tag">
+                        06 / Projects
+                    </div>
+
+                    <h3>
+                        Project Stone
+                    </h3>
+
+                    <p>
+                        Discuss stone requirements for residential,
+                        commercial and architectural projects.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="product-link">
+                        Start Enquiry →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VSL
+========================= -->
+
+<section class="vsl-section" id="video">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Visual Stone Gallery
+            </div>
+
+            <h2>
+                See the stone.<br>
+                <span>Feel the difference.</span>
+            </h2>
+
+            <p>
+                Explore Lucky Traders' latest stone inspiration
+                and product visuals on Instagram.
+            </p>
+
+        </div>
+
+
+        <div class="vsl reveal">
+
+            <div class="vsl-content">
+
+                <button
+                    class="play"
+                    id="openVideo"
+                    aria-label="Open Instagram">
+
+                    <span class="play-triangle"></span>
+
+                </button>
+
+
+                <div class="eyebrow" style="justify-content:center;">
+                    @n_lucky_traders
+                </div>
+
+                <h2>
+                    Natural stone.<br>
+                    Naturally beautiful.
+                </h2>
+
+                <p>
+                    From original Makrana Sangemarmar to granite
+                    and other marble varieties, explore the latest
+                    stone visuals and updates from Lucky Traders.
+                </p>
+
+
+                <a
+                    href="https://www.instagram.com/n_lucky_traders/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-gold magnetic">
+
+                    View Instagram ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS / GALLERY
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Project Inspiration
+            </div>
+
+            <h2>
+                Stone in its
+                <span>natural setting.</span>
+            </h2>
+
+            <p>
+                Inspiration for residential interiors, bathrooms,
+                kitchens, flooring and architectural spaces.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1767554261805-95185e9ecf87?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="Luxury marble interior"
+                    loading="lazy">
+
+                <span class="gallery-label">
+                    Luxury Interiors
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item reveal delay1">
+
+                <img
+                    src="https://images.unsplash.com/photo-1672322331200-c4ac12a93c15?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1300"
+                    alt="Granite kitchen"
+                    loading="lazy">
+
+                <span class="gallery-label">
+                    Granite Kitchens
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item reveal delay2">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548705063-56ee6314cf45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1300"
+                    alt="White marble surface"
+                    loading="lazy">
+
+                <span class="gallery-label">
+                    Makrana Marble
+                </span>
+
+            </div>
+
+
+            <div class="gallery-item reveal delay3">
+
+                <img
+                    src="https://images.unsplash.com/photo-1765766601432-edcdc9ae017d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800"
+                    alt="Marble architectural interior"
+                    loading="lazy">
+
+                <span class="gallery-label">
+                    Architectural Stone
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section id="reviews">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Customer Experience
+            </div>
+
+            <h2>
+                Built around
+                <span>trust.</span>
+            </h2>
+
+            <p>
+                Stone is a long-term decision. Our focus is on helping
+                customers select a material that suits their project.
+            </p>
+
+        </div>
+
+
+        <div class="review-grid">
+
+
+            <article class="review reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “We were looking for genuine Makrana marble for
+                    our home. The natural look and finish were exactly
+                    what we wanted.”
+                </p>
+
+                <div class="review-bottom">
+
+                    <strong>
+                        Homeowner
+                    </strong>
+
+                    <span>
+                        Residential
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="review reveal delay1">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “The granite selection gave us several options
+                    for the kitchen and other high-use areas.”
+                </p>
+
+                <div class="review-bottom">
+
+                    <strong>
+                        Customer
+                    </strong>
+
+                    <span>
+                        Kitchen Project
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="review reveal delay2">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “The marble has a beautiful natural character.
+                    It made a noticeable difference to the overall
+                    look of the interior.”
+                </p>
+
+                <div class="review-bottom">
+
+                    <strong>
+                        Client
+                    </strong>
+
+                    <span>
+                        Interior Project
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section id="faq">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Frequently Asked
+            </div>
+
+            <h2>
+                Before you choose
+                <span>your stone.</span>
+            </h2>
+
+            <p>
+                A few common questions about marble, granite and
+                natural stone requirements.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+
+                    <span>
+                        Do you provide original Makrana Marble?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Lucky Traders' Instagram profile describes the
+                        business as providing original Makrana Marble
+                        (Sangemarmar). Contact the business to discuss
+                        current availability and specific grades.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+
+                    <span>
+                        Do you deal in granite?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Granite is one of the main natural-stone
+                        categories featured by Lucky Traders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+
+                    <span>
+                        Do you have other marble varieties?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        The business profile also mentions other marble
+                        varieties. Contact Lucky Traders with your
+                        preferred colour, pattern or application.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+
+                    <span>
+                        Can I enquire through WhatsApp?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. The WhatsApp buttons throughout the website
+                        open a direct conversation with Lucky Traders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item reveal">
+
+                <button class="faq-question">
+
+                    <span>
+                        Can I visit or discuss a project requirement?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Call or WhatsApp 8511430935 to discuss your
+                        requirement and confirm the current showroom
+                        location and availability.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATION
+========================= -->
+
+<section class="location" id="location">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Find Lucky Traders
+            </div>
+
+            <h2>
+                Let's talk
+                <span>stone.</span>
+            </h2>
+
+            <p>
+                Use the map search below to locate Lucky Traders
+                and contact the business directly for directions.
+            </p>
+
+        </div>
+
+
+        <div class="location-grid">
+
+
+            <div class="location-card reveal">
+
+                <div class="eyebrow">
+                    Contact Details
+                </div>
+
+                <h3>
+                    Lucky Traders
+                </h3>
+
+                <p>
+                    Original Makrana Marble (Sangemarmar),
+                    Granite and other Marble.
+                </p>
+
+
+                <div class="contact-list">
+
+
+                    <div class="contact-row">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Call
+                            </strong>
+
+                            <a href="tel:+918511430935">
+                                8511430935
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-row">
+
+                        <div class="contact-icon">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                WhatsApp
+                            </strong>
+
+                            <a
+                                href="https://wa.me/918511430935"
+                                target="_blank"
+                                rel="noopener">
+
+                                Chat on WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-row">
+
+                        <div class="contact-icon">
+                            ◎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Instagram
+                            </strong>
+
+                            <a
+                                href="https://www.instagram.com/n_lucky_traders/"
+                                target="_blank"
+                                rel="noopener">
+
+                                @n_lucky_traders
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <br>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=N+Lucky+Granite+Marble+and+Tiles+Traders"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-gold magnetic">
+
+                    Open Google Maps ↗
+
+                </a>
+
+            </div>
+
+
+            <div class="map reveal delay1">
+
+                <iframe
+                    src="https://www.google.com/maps?q=N%20Lucky%20Granite%20Marble%20and%20Tiles%20Traders&output=embed"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-copy reveal">
+
+                <div class="eyebrow">
+                    Start Your Enquiry
+                </div>
+
+                <h2>
+                    Find the stone
+                    <span>your space deserves.</span>
+                </h2>
+
+                <p>
+                    Tell us what you're looking for — Makrana marble,
+                    Sangemarmar, granite or another marble variety —
+                    and start a direct conversation with Lucky Traders.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://wa.me/918511430935"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-gold magnetic">
+
+                    WhatsApp Lucky Traders
+
+                </a>
+
+            </div>
+
+
+            <form class="contact-form reveal delay1"
+                  id="contactForm">
+
+                <div class="form-row">
+
+                    <input
+                        class="input"
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required>
+
+                    <input
+                        class="input"
+                        type="tel"
+                        id="phone"
+                        placeholder="Phone Number"
+                        required>
+
+                </div>
+
+
+                <input
+                    class="input"
+                    type="text"
+                    id="requirement"
+                    placeholder="What stone are you looking for?"
+                    required>
+
+
+                <textarea
+                    class="input"
+                    id="message"
+                    placeholder="Tell us about your project or requirement...">
+                </textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-gold magnetic">
+
+                    Send Enquiry on WhatsApp →
+
+                </button>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+
+                    <div class="logo-symbol">
+                        LT
+                    </div>
+
+                    <div class="logo-text">
+
+                        <strong>
+                            Lucky Traders
+                        </strong>
+
+                        <small>
+                            Marble • Granite • Sangemarmar
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <p>
+                    Original Makrana Marble, Sangemarmar,
+                    Granite and other marble for elegant
+                    residential and architectural spaces.
+                </p>
+
+
+                <div class="socials">
+
+
+                    <a
+                        href="https://www.instagram.com/n_lucky_traders/"
+                        target="_blank"
+                        rel="noopener"
+                        class="social"
+                        aria-label="Instagram">
+
+                        ◎
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/918511430935"
+                        target="_blank"
+                        rel="noopener"
+                        class="social"
+                        aria-label="WhatsApp">
+
+                        ◉
+
+                    </a>
+
+
+                    <a
+                        href="tel:+918511430935"
+                        class="social"
+                        aria-label="Call">
+
+                        ☎
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#collections">
+                    Collections
+                </a>
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Information
+                </h4>
+
+                <a href="#reviews">
+                    Reviews
+                </a>
+
+                <a href="#faq">
+                    FAQ
+                </a>
+
+                <a href="#location">
+                    Location
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="tel:+918511430935">
+                    8511430935
+                </a>
+
+                <a
+                    href="https://www.instagram.com/n_lucky_traders/"
+                    target="_blank"
+                    rel="noopener">
+
+                    @n_lucky_traders
+
+                </a>
+
+                <a
+                    href="https://wa.me/918511430935"
+                    target="_blank"
+                    rel="noopener">
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span>
+                Lucky Traders. All Rights Reserved.
+            </span>
+
+            <span>
+                Designed by
+                <strong>
+                    Marwar Infotech
+                </strong>
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING BUTTONS
+========================= -->
+
+<div class="floating">
+
+
+    <a
+        href="tel:+918511430935"
+        class="float float-call"
+        title="Call Lucky Traders"
+        aria-label="Call Lucky Traders">
+
+        ☎
+
+    </a>
+
+
+    <a
+        href="https://wa.me/918511430935"
+        target="_blank"
+        rel="noopener"
+        class="float float-wa"
+        title="WhatsApp Lucky Traders"
+        aria-label="WhatsApp Lucky Traders">
+
+        ◉
+
+    </a>
+
+
+</div>
+
+
+<!-- =========================
+     VIDEO / INSTAGRAM MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="modalClose">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-content">
+
+            <a
+                href="https://www.instagram.com/n_lucky_traders/"
+                target="_blank"
+                rel="noopener">
+
+                Watch @n_lucky_traders on Instagram ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   PRELOADER
+========================= */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("preloader")
+            .classList.add("hide");
+
+    },900);
+
+});
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+const navbar =
+document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 40){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+const mobileClose =
+document.getElementById("mobileClose");
+
+
+menuButton.addEventListener("click",()=>{
+
+    mobileMenu.classList.add("open");
+
+    document.body.classList.add("menu-open");
+
+});
+
+
+mobileClose.addEventListener("click",()=>{
+
+    mobileMenu.classList.remove("open");
+
+    document.body.classList.remove("menu-open");
+
+});
+
+
+document
+.querySelectorAll(".mobile-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        mobileMenu.classList.remove("open");
+
+        document.body.classList.remove("menu-open");
+
+    });
+
+});
+
+
+/* =========================
+   HERO SLIDER
+========================= */
+
+const slides =
+document.querySelectorAll(".hero-slide");
+
+const slideNumber =
+document.getElementById("slideNumber");
+
+let currentSlide = 0;
+
+
+setInterval(()=>{
+
+    slides[currentSlide]
+        .classList
+        .remove("active");
+
+
+    currentSlide =
+        (currentSlide + 1) % slides.length;
+
+
+    slides[currentSlide]
+        .classList
+        .add("active");
+
+
+    slideNumber.textContent =
+        String(currentSlide + 1)
+        .padStart(2,"0")
+        +
+        " / "
+        +
+        String(slides.length)
+        .padStart(2,"0");
+
+
+},5500);
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealObserver =
+new IntersectionObserver(
+    entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target
+                    .classList
+                    .add("visible");
+
+                revealObserver
+                    .unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.12
+    }
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element=>{
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================
+   MAGNETIC BUTTON
+========================= */
+
+document
+.querySelectorAll(".magnetic")
+.forEach(button=>{
+
+    button.addEventListener("mousemove",event=>{
+
+        const rect =
+            button.getBoundingClientRect();
+
+        const x =
+            event.clientX -
+            rect.left -
+            rect.width / 2;
+
+        const y =
+            event.clientY -
+            rect.top -
+            rect.height / 2;
+
+        button.style.transform =
+            `translate(${x*.12}px,${y*.12}px)`;
+
+    });
+
+
+    button.addEventListener("mouseleave",()=>{
+
+        button.style.transform="";
+
+    });
+
+});
+
+
+/* =========================
+   FAQ
+========================= */
+
+document
+.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const item =
+            button.parentElement;
+
+        const answer =
+            item.querySelector(".faq-answer");
+
+
+        document
+        .querySelectorAll(".faq-item")
+        .forEach(other=>{
+
+            if(other !== item){
+
+                other.classList.remove("active");
+
+                other
+                .querySelector(".faq-answer")
+                .style.maxHeight=null;
+
+            }
+
+        });
+
+
+        item.classList.toggle("active");
+
+
+        if(item.classList.contains("active")){
+
+            answer.style.maxHeight =
+                answer.scrollHeight + "px";
+
+        }else{
+
+            answer.style.maxHeight=null;
+
+        }
+
+    });
+
+});
+
+
+/* =========================
+   WHATSAPP FORM
+========================= */
+
+const form =
+document.getElementById("contactForm");
+
+
+form.addEventListener("submit",event=>{
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name")
+        .value
+        .trim();
+
+
+    const phone =
+        document.getElementById("phone")
+        .value
+        .trim();
+
+
+    const requirement =
+        document.getElementById("requirement")
+        .value
+        .trim();
+
+
+    const message =
+        document.getElementById("message")
+        .value
+        .trim();
+
+
+    const text =
+`Hello Lucky Traders,
+
+Name: ${name}
+Phone: ${phone}
+Stone Requirement: ${requirement}
+
+Project Details:
+${message}`;
+
+
+    const url =
+        "https://wa.me/918511430935?text="
+        +
+        encodeURIComponent(text);
+
+
+    window.open(url,"_blank");
+
+});
+
+
+/* =========================
+   INSTAGRAM MODAL
+========================= */
+
+const modal =
+document.getElementById("modal");
+
+const openVideo =
+document.getElementById("openVideo");
+
+const modalClose =
+document.getElementById("modalClose");
+
+
+openVideo.addEventListener("click",()=>{
+
+    modal.classList.add("open");
+
+});
+
+
+modalClose.addEventListener("click",()=>{
+
+    modal.classList.remove("open");
+
+});
+
+
+modal.addEventListener("click",event=>{
+
+    if(event.target === modal){
+
+        modal.classList.remove("open");
+
+    }
+
+});
+
+
+/* =========================
+   ESCAPE
+========================= */
+
+document.addEventListener("keydown",event=>{
+
+    if(event.key === "Escape"){
+
+        mobileMenu.classList.remove("open");
+
+        modal.classList.remove("open");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+
+/* =========================
+   YEAR
+========================= */
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
